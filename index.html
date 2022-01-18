@@ -75,7 +75,7 @@ Channels are passed back and forth in l2cap packets and in Flouride each channel
 
     return (p_ccb);
 }</code></pre>
-The bug is pretty easy to spot, the lower bounds of the <b>local_cid</b> parameter is checked to make sure it isn't a reserved cid but the upper bounds isn't check, leading to an index out of bound in the <b>ccb_pool</b> array.
+The bug is pretty easy to spot, the lower bounds of the <b>local_cid</b> parameter is checked to make sure it isn't a reserved cid but the upper bounds isn't checked, leading to an index out of bound in the <b>ccb_pool</b> array.
 </p>
 
 <h2>Exploiting the bug</h2>
